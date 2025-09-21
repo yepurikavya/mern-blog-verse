@@ -22,7 +22,7 @@ const Home = () => {
     }, {
         id: 2,
         title: "Understanding JavaScript Closures",
-        author: "Asha ",
+        author: "girija ",
         timeRead: " 7 min read",
         postedOn: "Dec 05, 2023",
         content: "JavaScript closures are a fundamental concept that every developer should understand. In this article, we'll dive deep into closures, how they work, and practical examples of their usage.",
@@ -41,7 +41,7 @@ const Home = () => {
     }, {
         id: 5,
         title: "Mastering Flexbox for Layout Design",
-        author: " Avinash",
+        author: " Geetha",
         timeRead: " 10 min read",
         postedOn: "Sep 15, 2023",
         content: "Flexbox is a powerful layout module in CSS that allows for flexible and responsive design. This article will guide you through the basics of Flexbox and how to use it effectively in your projects.",
@@ -50,7 +50,7 @@ const Home = () => {
     }, {
         id: 6,
         title: "Introduction to TypeScript for JavaScript Developers",
-        author: "Teja",
+        author: "priya",
         timeRead: " 9 min read",
         postedOn: "Aug 10, 2023",
         content: "TypeScript is a superset of JavaScript that adds static typing and other features to enhance developer productivity. This introduction will cover the basics of TypeScript and how to get started.",
@@ -60,12 +60,12 @@ const Home = () => {
     return (
         <div >
             <NavBar/>
-            <div className="max-h-screen ">
+            <div className="max-h-screen  ">
                 <h1 className="flex justify-center text-3xl text-black-600 font-bold ">Welcome to Blogverse </h1>
                 <p className='flex justify-center text-xl text-gray-500 mt-4'>Discover amazing stories, insights, and ideas from our community of </p>
                 <p className='flex justify-center text-gray-500 text-xl'>writers.<span className='text-blue-500  text-xl  hover:border-b-2 cursor pointer pr-1'>Signin</span> to create your own posts and save your favorites.</p>
 
-                <div className='flex gap-6 justify-center flex-wrap w-full rounded-lg shadow-lg pb-5 mt-8'>
+                <div className='flex gap-6 justify-center flex-wrap w-full rounded-lg shadow-lg pb-5 mt-8 '>
                     {
                         posts.map((post) => (
                             <div className="w-[96] bg-white rounded-lg shadow-lg" key={post.id}>

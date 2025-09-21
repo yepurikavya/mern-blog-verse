@@ -143,7 +143,7 @@ return (
             {error && <p className="text-red-600">{error}</p>}
             {success && <p className="text-green-700">{success}</p>}
             <div className="w-[90%] ">
-                <button type="submit" className="font-semibold w-full text-white  bg-purple-700 rounded-xl border-1 py-3 px-1 mt-4 cusor-pointer relative "><CircleUserRound className="  absolute w-7 h-7 flex justify-around" /><p className="flex justify-center mb-3 ">create account</p></button>
+                <button type="submit" className="font-semibold w-full text-white  bg-purple-700 rounded-xl border-1 py-3 px-1 mt-4 cusor-pointer relative "><CircleUserRound className="  absolute w-7 h-7 " /><p className="flex justify-center mb-3 ">create account</p></button>
             </div>
             <div className="border-[0.5px] border-gray-400 w-[90%] mt-4"></div>
             <div className="w[90%]">
