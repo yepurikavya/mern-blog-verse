@@ -26,7 +26,7 @@ const handleChange = (event) => {
     return (
         <div className="flex items-center flex-col gap-5 mt-8  ">
             <NavBar />
-            <form className="flex items-center flex-col border-1 rounded-2xl mb-4 w-1/4 py-3 " >
+            <form className="flex items-center flex-col border-1 rounded-2xl mb-4 lg:w-1/2 py-5 sm:[50%] " >
                 <div className='flex items-center flex-col mt-10 gap-3'>
                     <h2 className="text-2xl text-black-700 font-bold">sign in</h2>
                 </div>
@@ -48,9 +48,9 @@ const handleChange = (event) => {
                         <p onClick={handlePassword}>{showPassword ? <Eye className="absolute right-3 top-4" /> : <EyeOff className="absolute right-3 top-4" />}</p>
                     </div>
                 </div>
-                <div className="flex gap-2  border-black w-[90%] mt-2 ">
+                <div className=" flex gap-2 border-black w-[90%] mt-2 ">
                     <input type="checkbox" name="" id="" ></input>
-                    <p>Remember me<span className=" pl-17 text-blue-700 hover:border-b-2 border-blue-600 font-semibold">Forget Password?</span> </p>
+                    <p>Remember me<span className="  text-blue-700 hover:border-b-2 border-blue-600 font-semibold ">Forget Password?</span> </p>
                 </div>
                 <div className='w-[80%]'>
                     <button className="font-semibold  w-full text-white  bg-blue-600 rounded-xl border-1 py-3 px-1 mt-4 cusor-pointer">sign in</button>

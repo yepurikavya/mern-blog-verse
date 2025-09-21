@@ -101,7 +101,7 @@ return (
         <NavBar />
         <h2 className="text-3xl text-blue-600 font-bold">join-Blogverse</h2>
         <p className=" text-xl  text-gray-500 font-medium mt-2 mb-2 ">create your account and start your blogging journey today </p>
-        <form onSubmit={handleSubmit} className=" flex flex-col border-1 border-black w-1/3 py-7 items-center rounded-2xl " action="">
+        <form onSubmit={handleSubmit} className=" flex flex-col border-1 border-black lg:w-1/3 py-7 sm:w-[50%] w-[90%] items-center rounded-2xl " action="">
             <div className="w-[90%] flex flex-col gap-2">
                 <p>Full name</p>
                 <div className='relative'>
@@ -143,7 +143,7 @@ return (
             {error && <p className="text-red-600">{error}</p>}
             {success && <p className="text-green-700">{success}</p>}
             <div className="w-[90%] ">
-                <button type="submit" className="font-semibold w-full text-white  bg-purple-700 rounded-xl border-1 py-3 px-1 mt-4 cusor-pointer relative "><CircleUserRound className="  absolute w-7 h-7 left-30" /><p className="flex justify-center mb-3 ">create account</p></button>
+                <button type="submit" className="font-semibold w-full text-white  bg-purple-700 rounded-xl border-1 py-3 px-1 mt-4 cusor-pointer relative "><CircleUserRound className="  absolute w-7 h-7 flex justify-around" /><p className="flex justify-center mb-3 ">create account</p></button>
             </div>
             <div className="border-[0.5px] border-gray-400 w-[90%] mt-4"></div>
             <div className="w[90%]">
