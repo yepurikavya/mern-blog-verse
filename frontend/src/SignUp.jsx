@@ -7,6 +7,7 @@ import { Mail } from 'lucide-react';
 import { Eye } from 'lucide-react';
 import { EyeOff } from 'lucide-react';
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 const SignUp = () => {
     const [formData, setformData] = useState(
         {
@@ -22,6 +23,8 @@ const SignUp = () => {
         password: "",
         confirmPassword: ""
     })
+    const [isLoading,setisLoading]=useState(false)
+    const [isModalOpen,setisOpenModal]= useState(false)
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [error, setError] = useState('');
@@ -29,6 +32,7 @@ const SignUp = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setisLoading(true)
         let newErrors = {}
         if (!formData.fullName) {
             newErrors.fullName = "please enter your fullname"
@@ -48,17 +52,25 @@ const SignUp = () => {
     
     if (Object.keys(newErrors).length > 0) {
         setErrors(newErrors)
+        setisLoading(false)
+        
     }
     else {
+        setTimeout(()=>{
         setSuccess("successfully your account is created")
         setformData({
             fullName: "",
-            email: "",
+          email: "",
             password: "",
             confirmPassword: ""
-
         })
-    }
+         setisOpenModal(true)
+         setisLoading(true)
+        },3000)
+        
+        
+        
+     }
 }
     // if (!formData.fullName || !formData.email || !formData.password || !formData.confirmPassword) {
     //     setError("please fill  all the above fields")
@@ -80,6 +92,7 @@ const SignUp = () => {
 
 const handlePassword = () => {
     setShowPassword((password) => !password)
+
 }
 const handleConfirmPassword = () => {
     setShowConfirmPassword((password) => !password)
@@ -143,7 +156,7 @@ return (
             {error && <p className="text-red-600">{error}</p>}
             {success && <p className="text-green-700">{success}</p>}
             <div className="w-[90%] ">
-                <button type="submit" className="font-semibold w-full text-white  bg-purple-700 rounded-xl border-1 py-3 px-1 mt-4 cusor-pointer relative "><CircleUserRound className="  absolute w-7 h-7 " /><p className="flex justify-center mb-3 ">create account</p></button>
+                <button type="submit" className="font-semibold w-full text-white  bg-purple-700 rounded-xl border-1 py-3 px-1 mt-4 cusor-pointer relative "><CircleUserRound className="  absolute w-7 h-7 pl-3" /><p className="flex justify-center mb-3 ">{isLoading ?"creating...":"create account"}</p></button>
             </div>
             <div className="border-[0.5px] border-gray-400 w-[90%] mt-4"></div>
             <div className="w[90%]">
@@ -152,6 +165,20 @@ return (
             <button className="text-grey-700 font-semibold hover:bg-gray-200 py-4 w-[90%] rounded-xl cursour-pointer">back to home</button>
 
         </form>
+        {isModalOpen && 
+        
+        <div className="fixed h-dvh w-dvw border-2  flex justify-center items-center">
+            <div className="absoult h-dvh w-dvw bg-black opacity-50"></div>
+            <div className="p-6 border-gray-500 border-1 rounded-lg bg-white">
+                <p className='font-bold'>hello kavya,welcome to blogverce</p>
+                <p className="mb-4">"your account has been created succesfully"</p>
+                <div className='flex gap-5'>
+                <Link to="\signin">login</Link>
+                <button onClick={()=>setisOpenModal(false)} className="px-4 py-2 bg-gray-200 ">close</button>
+                            </div>
+                            </div>
+                            
+        </div>}
     </div>
 )
 }
